@@ -3,4 +3,4 @@ While working on this project, my goal is to build and apply deep learning of en
 
 I also commit to building this entire project by hand, meaning there will not be a single line of AI generated code, documentation or tests in this repo.
 
--Jack
+~ Jack

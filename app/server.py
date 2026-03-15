@@ -9,11 +9,8 @@ class Capture(BaseModel):
 captures = []
 
 @app.post('/capture')
-def add_capture(content) -> dict:
-    new_capture = {
-        id: len(captures) + 1,
-        content: content
-        }
+def add_capture(capture: Capture) -> Capture:
+    new_capture = Capture(id = len(captures) + 1, content = capture.content)
     captures.append(new_capture)
     return new_capture
 
@@ -28,3 +25,11 @@ def get_capture_from_id(id: int):
             return capture
     return {"Error, Not Found"}, 404
 
+@app.post('/capture/{id}')
+def update_content(content: str, id: int):
+    for capture in captures:
+        if capture.id == id:
+            capture.content = content
+            return {"Success:" "Updated Content for Capture"}, 200
+        
+    return {"Failed to Update"}, 404
