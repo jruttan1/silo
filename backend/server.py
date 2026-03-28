@@ -3,6 +3,7 @@ import crud
 import db
 from contextlib import asynccontextmanager
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     print('starting server & db')
@@ -29,6 +30,22 @@ async def get_note_from_id(id: int, session = Depends(db.get_session)):
 
 
 @app.post('/note')
-async def update_content(content: str, title: str, session = Depends(db.get_session)):
+async def add_note(content: str, title: str, session = Depends(db.get_session)):
     note = crud.write_note(content, title, session)
     return note
+
+@app.delete('/delete_note/{id}')
+async def delete_note(id: int, session = Depends(db.get_session)):
+    note = crud.delete_note(id, session)
+    if note is not None:
+        return note
+    else:
+        raise HTTPException(status_code=404, detail="Note not found in DB")
+
+@app.put('/update_note/{id}')
+async def update_note(id: int, title: str, content: str, session = Depends(db.get_session)):
+    note = crud.update_note(id, content, title, session)
+    if note is not None:
+        return note
+    else:
+        raise HTTPException(status_code=404, detail="Note not found in DB")

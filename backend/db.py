@@ -6,6 +6,7 @@ class Note(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
     title: str = Field(index=True) # Field means this is a column in the database
     created_at: datetime = Field(default_factory = datetime.now) # use .now not .now() cause we wanna call the function each time an object of this class is created
+    updated_at: datetime = Field(default_factory = datetime.now)
     content: str # The actual content of the note
 
 # Indexing is a way to optimize database queries. When you create an index on a column, 
