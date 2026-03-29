@@ -5,8 +5,9 @@ from schemas import NoteCreate
 def create_embedding(note: NoteCreate):
     text = {'title': note.title,
             'content': note.content}
-    embedding = client.embeddings.create(
+    response = client.embeddings.create(
         input = str(text),
         model = "text-embedding-3-small"
     )
+    embedding = response.data[0].embedding # unpack response object
     return embedding
