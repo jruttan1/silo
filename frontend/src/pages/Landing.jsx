@@ -1,11 +1,9 @@
 import Hero from '../components/Hero.jsx'
-import ThemeToggle from '../components/ThemeToggle.jsx'
 
-function Landing() {
+function Landing({ theme, setTheme }) {
     return (
         <div>
-            <Hero/>
-            <ThemeToggle/>
+            <Hero theme={theme} setTheme={setTheme}/>
         </div>
     )
 }
