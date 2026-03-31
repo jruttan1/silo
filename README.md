@@ -1,4 +1,4 @@
-# silo
+# eso
 
 I realized I'd been shipping lots of real projects, but lost touch with the fundamentals that got me there. So I decided to build another project lol, but this time I was gonna slow down, write each line by hand and really focus on understanding every library I was using. 
 

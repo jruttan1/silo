@@ -1,12 +1,95 @@
-body {
-  background: #1a1a2e;
-  margin: 0;
-  font-family: "Playfair Display", serif
+:root {
+  --bg-paper: #FAF8F7;
+  --bg-surface: #EBEBEB;
+  --border: #E0DCDA;
+  --raised: #D6D0CD;
+  --text-muted: #B0A8A4;
+  --text-body: #4A4240;
+  --text-primary: #1E1C1B;
+  --fog-subtext: #7A726E;
 }
 
-.playfair-display {
-  font-family: "Playfair Display", serif;
+[data-theme="fog"] {
+  --fog-accent: #A8624A;
+  --fog-tint: #E6D7CE;
+  --fog-mid: #E8C4B0;
+}
+
+[data-theme="blossom"] {
+  --blossom-accent: #A85870;
+  --blossom-tint: #DEC9CC;
+  --blossom-mid: #C4979C;
+}
+
+body {
+  background: var(--bg-surface);
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-left: 150px;
+  max-width: 700px;
+}
+
+.title {
+  font-family: "Instrument Serif", serif;
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 80px;
+  font-weight: 200;
+  letter-spacing: -2px;
+  margin-top: -275px;
+}
+
+.subtitle {
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-primary);
+  margin-top: 12px;
+}
+
+.landing-text-block {
+  font-family: "DM Sans", sans-serif;
+  font-style: italic;
+  color: var(--fog-subtext);
+  margin-top: 16px;
+}
+
+.links {
+  font-family: "DM Sans", sans-serif;
+   text-decoration: underline;
+  color: var(--fog-subtext);
+  margin-top: 20px;
+}
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif; 
+  font-weight: 200;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.dm-sans-regular {
+  font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 3;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.dm-sans-italic {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
   font-style: normal;
 }
