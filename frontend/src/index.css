@@ -85,10 +85,11 @@ body {
 }
 
 .themeToggle {
+  display: flex;
   position: fixed;
   right: 180px;
   bottom: 70px;
-  gap: 8px;
+  gap: 10px;
   width: fit-content;
   margin: 0 0 20px;
   padding: 10px;
@@ -106,13 +107,13 @@ body {
   font-size: 15px;
   font-weight: 300;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--text-body);
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
 .themeToggleButton:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .themeToggleButton:active {
@@ -163,9 +164,9 @@ a {
 }
 
 .tree{
-  position: absolute;
+  position: fixed;
   right: 40px;
-  bottom: px;
+  bottom: 0px;
   width: 220px;
-  transform: scaleX(-1) rotate(12deg);
+  transform: rotate(12deg);
 }

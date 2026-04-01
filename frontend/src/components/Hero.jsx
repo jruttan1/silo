@@ -23,7 +23,7 @@ function Hero({ theme, setTheme }) {
                 built by jack ruttan
             </div>
             <ThemeToggle theme={theme} setTheme={setTheme}/>
-            <img className="tree" src={tree} alt="" />
+            <img className="tree" src={tree} alt=""/>
         </div>
     )
 }
