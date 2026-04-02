@@ -1,5 +1,5 @@
 from sqlmodel import select, Session
-from db import Note
+from db import Note, Edge
 from datetime import datetime
 from schemas import NoteCreate, NoteResponse
 
@@ -49,3 +49,7 @@ def update_note(id: int, new_note: NoteCreate, session: Session):
     else:
         print(f'note not found with id: {id}')
     
+def get_all_edges(session: Session):
+    statement = select(Edge)
+    edges = session.exec(statement)
+    return edges.all()

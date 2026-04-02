@@ -19,6 +19,16 @@ class Edge(SQLModel, table=True):
     to_note_id: int | None = Field(default = None, foreign_key = "note.id", primary_key = True)
     distance: float | None # cosine distance between 2 notes
 
+
+class Cluster(SQLModel, table=True):
+    id: int | None = Field(default=True, primary_key = True)
+    cluster_name: str | None
+
+class NoteCluster(SQLModel, table=True): # junction table to represent the many-many relationship
+    note_id: int | None = Field(foreign_key="note.id", primary_key=True)
+    cluster_id: int | None = Field(foreign_key ="cluster.id", primary_key= True)
+
+
 # Postgres configs
 load_dotenv()
 postgres_url = os.getenv('POSTGRES_URL')
