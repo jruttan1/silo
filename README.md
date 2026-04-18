@@ -16,7 +16,3 @@ so far i've used
 - OpenAI Embeddings
 - React
 - Vite
-
-# how to use it
-
-you cant yet lol
